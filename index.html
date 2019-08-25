@@ -3,10 +3,23 @@
 <meta charset="utf-8">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
-<script src="lang.js"></script>
+<script src="translate.js"></script>
+<script>
+var txt = {
+"en":{"hey":"Hey"},
+"ja":{"hey":"じゃ"}
+};
+$(function(){
+$("span").translate({default_lang:"en", langs:"#langs", source: txt});
+});
+</script>
 </head>
 <body>
 <h1><span data-trans-hey>Hey</span></h1>
+<!--<div id="langs">
+<a href="#" id="en">English</a>
+<a href="#" id="ja">日本語</a>
+</div>-->
 <select id="langs">
 <option value="en">English</option>
 <option value="ja">日本語</option>
