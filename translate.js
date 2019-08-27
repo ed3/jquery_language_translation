@@ -6,13 +6,17 @@ $.fn.translate = function(opt){
 		set_lang(sett.source[lang]);
 	}
 	function set_lang(t){
-	$(el).text(function(){
-		var nod = this.attributes[0].nodeName;
-		if (nod.indexOf("data-trans-") === 0){
-			var key = nod.split("-");
-			if(t.hasOwnProperty(key[2])){
-			return t[key[2]];
+	$(el).html(function(){
+		var nod = this.attributes, i=0;
+		while (i < nod.length) {
+			var nn = nod[i].nodeName;
+			if (nn.indexOf('data-trans-') === 0){
+			var key = nn.split("-");
+			if(dictionary.hasOwnProperty(key[2])){
+			return dictionary[key[2]];
 			}
+			}
+			i++;
 		}
 	});
 	}
