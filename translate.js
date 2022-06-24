@@ -12,8 +12,8 @@ $.fn.translate = function(opt){
 			var nn = nod[i].nodeName;
 			if (nn.indexOf('data-trans-') === 0){
 			var key = nn.split("-");
-			if(dictionary.hasOwnProperty(key[2])){
-			return dictionary[key[2]];
+			if(t.hasOwnProperty(key[2])){
+			return t[key[2]];
 			}
 			}
 			i++;
